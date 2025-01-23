@@ -7,6 +7,8 @@ SCNP is a executable file which can be executed as:
 
 If you use this code anywhere, I want to kindly request you to cite the following the articles as an acknowledgement,
 
+https://pubs.acs.org/doi/full/10.1021/acsnano.4c01099
+
 https://pubs.aip.org/aip/jcp/article/156/23/234901/2841428/Modes-of-adhesion-of-spherocylindrical
 
 https://pubs.rsc.org/en/content/articlelanding/2023/sm/d2sm01574a
