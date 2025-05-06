@@ -1,18 +1,17 @@
-/**
- * \Generation of Spherocylindircal NP.
- */
+\\ the code generates the vertices of a Spherocylindircal NP.
+
 
 //#define WARNINGS_ENABLED
 
 #include <iostream>
 #include <cstdlib>
 
-
+//This generates the vertices of a sphere
 #include "Include/tesselaSphere.h"
 
 using namespace std;
 
-
+//Create the data types used later
 struct Point{
     int x;
     int y;
@@ -29,6 +28,7 @@ double CalcAngle(position<double> a,position<double> b, position<double> c);
 double CalcCos(position<double> a,position<double> b, position<double> c);
 TriPoint MakeTriangle(Point a,Point b);
 
+//Define the data type for assisgning force fields later. Not important for this case
 #define CAPSULE 6
 #define NANO 1
 
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 	
 	
 	
-	//NP parameters
+	//Geometry parameters
 	int para_radius=atoi(argv[1]);
 	double para_AspRat=atof(argv[2]);
 	
@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     
     auto sphereVertex = FirstSphere.PrintSphereVertex();
         
-    //SphereEnds for the Capsule
+    //creates the hemiSphere Ends for the Capsule
     for(int i = 0; i < sphereVertex.size(); i++)
     {
         position<double> temp;
@@ -163,7 +163,7 @@ int main(int argc, char **argv)
     double epsilon=newLen-(temp_f/2.0);	//extra length each time
     
     
-    //Final Left Ring for the cylinder
+    //Final Left Ring for the cylinder after adjustment
     double theta_prime=(a-epsilon/double(new_points))/radius;
     
     for(int l = 0; l <temp_LcylinderVertices.size(); l++){
@@ -352,7 +352,7 @@ int main(int argc, char **argv)
       }
    }
    
-   //EdgeMap bool to store the Edge information
+   //EdgeMap bool to store the Edge information to create bonding force later
    int n=capsuleVertices.size();
    bool E_map[n][n];
    for (int i = 0; i < n; i++){
@@ -384,7 +384,7 @@ int main(int argc, char **argv)
    
    
    //Store the Edges after rearranging it and then store the Triangles
-   //Temp triangle to store all the edges connected to each point, and then store them as triangles
+   //Temp triangle to store all the edges connected to each point, and then store them as triangles. This can be hepful for bending force
    std::vector<Point> TempTriangle;
    for (int j=0;j<n;j++){
    	for (int i=0; i<Temp_List.size();i++){	
