@@ -3,7 +3,7 @@ This code generates a Spherocylindrical NP of Radius,R and Aspect Ratio, AR. \
 In order to generate the vertices, compile the  SCNP.cpp. The executable file requires the desired radius and Aspect Ratio of the NP. 
 
 # Code Schematics
-<img src="SCNP.png" alt="Plot" width="200"/>
+<img src="SCNP.png" alt="Plot" width="800"/>
 
 
 # Usage
@@ -12,6 +12,8 @@ SCNP is a executable file which can be executed as: \
 
 # Output
 Once the code is run, it outputs a .xyz file, containing the vertices of the NP.
+
+# Disclaimer
 
 If you use this code anywhere, I want to kindly request you to cite the following the articles as an acknowledgement,
 
